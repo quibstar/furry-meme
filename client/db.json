@@ -1,0 +1,329 @@
+{
+  "lists": [
+    {
+      "id": "1",
+      "name": "Shopping",
+      "items": [
+        {
+          "name": "Milk",
+          "id": "1",
+          "done": false
+        },
+        {
+          "name": "Eggs",
+          "id": "2",
+          "done": false
+        },
+        {
+          "name": "Toast",
+          "id": "3",
+          "done": true
+        },
+        {
+          "name": "Coffee",
+          "id": 1532405682093,
+          "done": false
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Home",
+      "items": [
+        {
+          "name": "Duct Tape",
+          "id": "4",
+          "done": false
+        },
+        {
+          "name": "Furnace Filters",
+          "id": "5",
+          "done": false
+        },
+        {
+          "name": "Weed Wiper",
+          "id": "6",
+          "done": false
+        }
+      ]
+    }
+  ],
+  "missions" :[
+    {
+      "assignment": "kill Hazel the dog",
+      "assigned": false,
+      "completed": false,
+      "report": "",
+      "bounty": "10 Hershey bars"
+    }
+  ],
+  "tasks": [
+    { 
+      "name": "test",
+      "dueDate": "09/28/2018",
+      "time": "6:00",
+      "assignedTo": [],
+      "task": "Feed the dog",
+      "repeating": true
+    }
+  ],
+  "inventory": [
+    {
+      "id": "1",
+      "name": "Logic",
+      "model": "10",
+      "serialNumber": "10.5.6",
+      "pricePerUnit": 2.5,
+      "category": "Hobby",
+      "quantity": 1,
+      "location": "Computer",
+      "unitType": "pc"
+    },
+    {
+      "id": "2",
+      "name": "Spaghetti-o",
+      "model": "12",
+      "serialNumber": "",
+      "category": "Home",
+      "quantity": 1,
+      "pricePerUnit": 8,
+      "location": "Pantery",
+      "unitType": "pallet"
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Test",
+      "lastName": "User",
+      "email": "test@test.com",
+      "role": "admin"
+    },
+    {
+      "id": "2",
+      "firstName": "Kris",
+      "lastName": "Utter",
+      "email": "quibstar@gmail.com",
+      "role": "admin"
+    }
+  ],
+  "budgets": [
+    {
+      "id": "qvc",
+      "name": "March Budget",
+      "category": "monthly",
+      "amount": 2435.42,
+      "lineItems": [
+        {
+          "name": "Car Payment2",
+          "amount": 135.42,
+          "paid": false,
+          "note": "Paid this off early to get some more money in savings"
+        },
+        {
+          "name": "Mortgage2",
+          "amount": 1303,
+          "paid": false,
+          "note": "This is note"
+        }
+      ]
+    },
+    {
+      "name": "July Budget",
+      "category": "Monthly",
+      "amount": 100,
+      "id": "~qvVpfr"
+    },
+    {
+      "name": "Pizza Party",
+      "amount": 100,
+      "category": "Bi-monthly",
+      "lineItems": [
+        {
+          "name": "Pizza",
+          "amount": 24.48,
+          "paid": true
+        },
+        {
+          "name": "Pizza",
+          "amount": 10,
+          "paid": true
+        }
+      ],
+      "id": "amDOvbo"
+    },
+    {
+      "name": "August Budget",
+      "amount": 1000,
+      "category": "Monthly",
+      "lineItems": [
+        {
+          "name": "DTE",
+          "amount": 50,
+          "paid": true
+        },
+        {
+          "name": "Car Loan",
+          "amount": 135,
+          "paid": true
+        },
+        {
+          "name": "Consumers",
+          "amount": 100,
+          "paid": true
+        }
+      ],
+      "id": "egFCr~v"
+    }
+  ],
+  "goals": [
+    {
+      "name": "Save $500.00",
+      "action": [
+        {
+          "name": "deposit on 5/18/18",
+          "dueDate": 12458,
+          "notificationTime": 12345,
+          "completed": false,
+          "notifyMe": true
+        },
+        {
+          "name": "deposit on 6/18/18",
+          "completed": false,
+          "notifyMe": true
+        },
+        {
+          "name": "deposit on 7/18/18",
+          "completed": false
+        },
+        {
+          "name": "deposit on 8/18/18",
+          "completed": false
+        }
+      ]
+    }
+  ],
+  "debts": [
+    {
+      "id": "1234",
+      "name": "Chase",
+      "amount": 100.42,
+      "accountNumber": "123",
+      "category": "Credit Card",
+      "payments": [
+        {
+          "amount": 100.5,
+          "paidOn": "1/5/12"
+        },
+        {
+          "amount": 23.34,
+          "paidOn": "2/5/12"
+        },
+        {
+          "amount": 100,
+          "paidOn": "3/5/12"
+        }
+      ]
+    },
+    {
+      "id": "44542rtw",
+      "name": "Car Loan",
+      "amount": 4567.34,
+      "accountNumber": "1233456789",
+      "category": "Car Loan"
+    },
+    {
+      "id": "az1234567890",
+      "name": "Amazon",
+      "amount": 100.34,
+      "accountNumber": "",
+      "category": "Credit Card"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "budgets",
+      "categories": [
+        "Monthly",
+        "Home",
+        "Savings"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "debts",
+      "categories": [
+        "Credit Card",
+        "Car Loan",
+        "Lowe's",
+        "Home Depot",
+        "Best Buy"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "calendar",
+      "categories": [
+        "Work",
+        "Home",
+        "Other"
+      ]
+    },
+    {
+      "id": "5",
+      "name": "tasks",
+      "categories": [
+        "Daily",
+        "Weekly",
+        "Monthly"
+      ]
+    },
+    {
+      "id": "6",
+      "name": "inventory",
+      "categories": [
+        "Home",
+        "Work",
+        "Hobby"
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "id": "1",
+      "name": "Admin",
+      "access": [
+        "all"
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Manager",
+      "access": [
+        "budgets",
+        "debts",
+        "calendar",
+        "List",
+        "tasks",
+        "inventory",
+        "settings",
+        "users"
+      ]
+    },
+    {
+      "id": "3",
+      "name": "User",
+      "access": [
+        "calendar",
+        "List",
+        "tasks"
+      ]
+    }
+  ],
+  "account": {
+    "id": "123456789",
+    "createdOn": "5/5/18",
+    "name": "Today's Hero"
+  }
+}

@@ -1,0 +1,7 @@
+.link-list {
+    display: inline-block;
+    margin-left: 10px;
+}
+.list-strike-through {
+    text-decoration: line-through;
+}

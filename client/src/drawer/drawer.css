@@ -1,0 +1,49 @@
+
+.drawer {
+    position: fixed;
+    overflow: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 60%;
+    background-color: white;
+    padding: 10px;
+    z-index: 1001;
+    border-left: 1px solid #eee;
+    margin-right: -60%;
+    -webkit-transition: margin-right 0.3s; /* Safari */
+    transition: margin-right 0.3s;
+}
+.drawer.small {
+    width: 30%;
+    margin-right: -30%;
+}
+.drawer.show, 
+.drawer-overlay.show {
+    margin-right: 0;
+}
+
+.drawer-overlay  {
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: transparent;
+    z-index: -1;
+    -webkit-transition: all 0.3s; /* Safari */
+    transition: all 0.3s;
+}
+
+.drawer-overlay.show {
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+}
+@media only screen and (max-width: 600px) {
+    .drawer {
+        width: 100%;
+        margin-right: -100%;
+    }
+}
+

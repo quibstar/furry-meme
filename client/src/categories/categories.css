@@ -1,0 +1,19 @@
+.category-name {
+    text-transform: capitalize;
+    font-size: 18px
+}
+.cat-col {
+    float: left;
+    width: 200px;
+    border: 1px solid #e8e8e8;
+    margin: 0 10px 10px 0;
+    padding: 10px;
+    border-radius: 2px;
+}
+.item {
+    border: 1px solid #e8e8e8;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 2px;
+}

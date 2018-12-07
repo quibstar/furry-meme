@@ -1,0 +1,43 @@
+{
+  "name": "@affordable-startup/modern-home-server",
+  "version": "1.0.0",
+  "description": "Api server for home office ",
+  "main": "index.js",
+  "engines": {
+    "node": "8.3.0",
+    "npm": "6.4.1"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client  && npm run build --prefix client",
+    "server": "nodemon index.js",
+    "client": "npm run start --prefix client",
+    "production": "concurrently \"npm run start\" \"npm run client\"",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "test": "PORT=8000 nodemon --exec 'mocha -R min'"
+  },
+  "author": "Kris Utter",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^3.0.1",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "concurrently": "^3.6.1",
+    "cors": "^2.8.5",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "jwt-simple": "^0.5.5",
+    "mongoose": "^5.3.15",
+    "morgan": "^1.9.0",
+    "nodemailer": "^4.7.0",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "tokgen": "^1.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^4.0.0",
+    "mocha": "^4.1.0"
+  }
+}

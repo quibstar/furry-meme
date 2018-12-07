@@ -1,0 +1,69 @@
+@import '~antd/dist/antd.css';
+
+.ant-layout-header {
+    padding: 0;
+    background-color: #1890ff;
+}
+
+.ant-layout-header a {
+    color: white;
+}
+
+.ant-tabs-nav .ant-tabs-tab {
+    text-transform: capitalize;
+}
+
+.ant-layout {
+    background-color: white;
+}
+
+.ant-input-number {
+    width: 100%;
+}
+
+.float-right {
+    float: right;
+}
+
+.float-left {
+    float: left;
+}
+
+.delete-red {
+    color:#f5222d
+}
+
+h1 {
+    /* float: left; */
+}
+.link {
+    cursor: pointer;
+}
+
+.m-button,
+.link {
+    margin: 10px 0;
+    float: right;
+}
+
+/* links on right side of index page */
+.right-link {
+    display: block;
+    margin-top: 10px;
+}
+
+/* flex */
+.flex {
+    display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        float: none;
+    }
+    .m-button {
+        margin-top: 0;
+        float: none;
+        width: 100%;
+    }
+}

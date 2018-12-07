@@ -1,0 +1,32 @@
+.in-green {
+    color: green;
+}
+
+.in-red {
+    color: red;
+}
+
+.no-ico .ant-table-row-expand-icon {
+    display: none;
+}
+
+.totals-text-right {
+    text-align: right !important;
+}
+.totals-wrap {
+    /* width: 300px; */
+    margin-right: 0;
+}
+.totals-wrap > div {
+    text-align: right;
+}
+.totals {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    float: right;
+}
+
+.drawer-totals {
+    width: 300px;
+}

@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+#public-header,
+#public-footer {
+  padding: 0 20px;
+}
+
+#public-main {
+  clear: both;
+  padding: 0 20px;
+}
+
+#logo {
+  float: left;
+}
+
+#to-admin {
+  float: right;
+}
+
+#to-admin a {
+  display: inline-block;
+  padding: 0 5px;
+  text-transform: uppercase;
+}

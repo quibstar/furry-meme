@@ -1,0 +1,30 @@
+[
+    {
+        "location" : "Dashboard",
+        "url": "/dashboard"
+    },{
+        "location" : "Budgets",
+        "url": "/budgets"
+    },{
+        "location" : "Debts",
+        "url": "/debts"
+    },{
+        "location" : "Lists",
+        "url": "/lists"
+    },{
+        "location" : "Tasks",
+        "url": "/tasks"
+    },{
+        "location" : "Categories",
+        "url": "/categories"
+    },{
+        "location" : "Inventory",
+        "url": "/inventory"
+    },{
+        "location" : "Account",
+        "url": "/account"
+    },{
+        "location" : "Users",
+        "url": "/Users"
+    }
+]
