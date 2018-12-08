@@ -70,20 +70,19 @@ class Users extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Users</h1>
-        <Link to={`/users/new`}>
+      <div id="user-admin">
+        <Drawer showDrawer={this.state.showDrawer} callback={this.animateDrawer.bind(this)}>
+          <Form id={this.state.id} fetchUsers={this.fetchUsers} />
+        </Drawer>
+        <Link to={`/users/new`} className="float-right">
           <Button className="m-button" icon="plus" type="primary">
             New User
           </Button>
         </Link>
-        <Drawer showDrawer={this.state.showDrawer} callback={this.animateDrawer.bind(this)}>
-          <Form id={this.state.id} fetchUsers={this.fetchUsers} />
-        </Drawer>
-
+        <h1>Users</h1>
         {this.state.users && (
           <List
-            grid={{ gutter: 16, xs: 1, sm: 2, md: 4 }}
+            grid={{ gutter: 8, xs: 1, sm: 2, md: 3 }}
             dataSource={this.state.users}
             renderItem={user => (
               <List.Item>

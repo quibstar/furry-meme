@@ -1,3 +1,7 @@
 .user-role {
     text-transform: capitalize;
 }
+
+#user-admin .ant-card-body {
+    min-height: 154px;
+}

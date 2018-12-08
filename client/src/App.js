@@ -3,6 +3,7 @@ import { Route, Switch, Link } from 'react-router-dom';
 import { Layout, Menu, Icon } from 'antd';
 import Media from 'react-media';
 import './App.css';
+import mainNav from './navigation';
 
 import Dashboard from './dashboard/';
 import Budgets from './budgets/index';
@@ -75,6 +76,22 @@ class App extends Component {
     localStorage.clear();
   };
 
+  /**
+   * main nav
+   */
+  mainNav = () => {
+    return mainNav.map((n, idx) => {
+      return (
+        <Menu.Item key={idx}>
+          <Link key={idx} to={n.url}>
+            <Icon type={n.icon} />
+            {n.location}
+          </Link>
+        </Menu.Item>
+      );
+    });
+  };
+
   renderAdmin() {
     return (
       <Layout style={{ minHeight: '100vh' }}>
@@ -84,83 +101,7 @@ class App extends Component {
               <Sider collapsible collapsed={this.state.collapsed} onCollapse={this.onCollapse}>
                 <Header />
                 <Menu theme="dark" defaultSelectedKeys={[this.state.currentUlr]} mode="inline">
-                  <Menu.Item key="/dashboard">
-                    <Link to="/dashboard">
-                      <Icon type="dashboard" />
-                      <span>Dashboard</span>
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="/receipts">
-                    <Link to="/receipts">
-                      <Icon type="barcode" />
-                      <span>Receipts</span>
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="/budgets">
-                    <Link to="/budgets">
-                      <Icon type="pie-chart" />
-                      <span>Budgets</span>
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="/debts">
-                    <Link to="/debts">
-                      <Icon type="line-chart" />
-                      <span>Debts</span>
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="/projects">
-                    <Link to="/projects">
-                      <Icon type="tool" />
-                      <span>Projects</span>
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="/lists">
-                    <Link to="/lists">
-                      <Icon type="bars" />
-                      <span>Lists</span>
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="/tasks">
-                    <Link to="/tasks">
-                      <Icon type="tool" />
-                      <span>Tasks</span>
-                    </Link>
-                  </Menu.Item>
-                  <Menu.Item key="/inventory">
-                    <Link to="/inventory">
-                      <Icon type="barcode" />
-                      <span>Inventory</span>
-                    </Link>
-                  </Menu.Item>
-                  <Menu.SubMenu
-                    key="Settings"
-                    title={
-                      <span>
-                        <Icon type="setting" />
-                        <span>Settings</span>
-                      </span>
-                    }
-                  >
-                    <Menu.Item key="/account">
-                      <Link to="/account">
-                        <Icon type="idcard" />
-                        <span>Account</span>
-                      </Link>
-                    </Menu.Item>
-
-                    <Menu.Item key="/users">
-                      <Link to="/users">
-                        <Icon type="user" />
-                        <span>Users</span>
-                      </Link>
-                    </Menu.Item>
-                    <Menu.Item key="/categories">
-                      <Link to="/categories">
-                        <Icon type="tags" />
-                        <span>Categories</span>
-                      </Link>
-                    </Menu.Item>
-                  </Menu.SubMenu>
+                  {this.mainNav()}
                 </Menu>
               </Sider>
             ) : (

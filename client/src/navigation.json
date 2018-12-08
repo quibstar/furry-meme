@@ -1,0 +1,57 @@
+[
+  {
+    "url": "/dashboard",
+    "icon": "dashboard",
+    "location": "Dashboard"
+  },
+  {
+    "url": "/receipts",
+    "icon": "barcode",
+    "location": "Receipts"
+  },
+  {
+    "url": "/budgets",
+    "icon": "pie-chart",
+    "location": "Budgets"
+  },
+  {
+    "url": "/debts",
+    "icon": "line-chart",
+    "location": "Debts"
+  },
+  {
+    "url": "/projects",
+    "icon": "tool",
+    "location": "Projects"
+  },
+  {
+    "url": "/lists",
+    "icon": "bars",
+    "location": "Lists"
+  },
+  {
+    "url": "/tasks",
+    "icon": "tool",
+    "location": "Tasks"
+  },
+  {
+    "url": "/inventory",
+    "icon": "barcode",
+    "location": "Inventory"
+  },
+  {
+    "url": "/account",
+    "icon": "idcard",
+    "location": "Account"
+  },
+  {
+    "url": "/users",
+    "icon": "user",
+    "location": "Users"
+  },
+  {
+    "url": "/categories",
+    "icon": "tags",
+    "location": "Categories"
+  }
+]

@@ -108,7 +108,7 @@ class Lists extends Component {
         <h1>Lists</h1>
         {this.state.lists && (
           <List
-            grid={{ gutter: 16, xs: 1, sm: 2, md: 4 }}
+            grid={{ gutter: 8, xs: 1, sm: 2, md: 3 }}
             dataSource={this.state.lists}
             renderItem={item => (
               <List.Item>

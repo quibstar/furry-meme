@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { Layout, Menu, Icon, Dropdown, Drawer } from 'antd';
 import Network from '../services/network';
 import Media from 'react-media';
-import nav from './nav';
+import nav from '../navigation-mobile';
+import './header.css';
+
 const { Header } = Layout;
 class UserHeader extends Component {
   constructor(props) {
@@ -71,7 +73,6 @@ class UserHeader extends Component {
   render() {
     const menu = (
       <Menu>
-        {/* <Menu.Item>{this.profileLink()}</Menu.Item> */}
         <Menu.Item>
           <Link to="/" onClick={() => this.props.signOut()}>
             <Icon type="logout" /> Sign Out
@@ -82,7 +83,13 @@ class UserHeader extends Component {
 
     return (
       <Header>
-        <Drawer placement="left" closable={false} onClose={() => this.animateDrawer()} visible={this.state.showDrawer}>
+        <Drawer
+          className="mobile-nav"
+          placement="left"
+          closable={false}
+          onClose={() => this.animateDrawer()}
+          visible={this.state.showDrawer}
+        >
           <Menu mode="inline">{this.renderNav()}</Menu>
         </Drawer>
         <Media query="(min-width: 599px)">

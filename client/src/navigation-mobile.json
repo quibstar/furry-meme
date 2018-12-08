@@ -5,13 +5,24 @@
     },{
         "location" : "Budgets",
         "url": "/budgets"
-    },{
+    },
+    {
+        "location" : "Receipts",
+        "url": "/receipts"
+    },
+    {
         "location" : "Debts",
         "url": "/debts"
-    },{
+    },
+    {
+        "location" : "Projects",
+        "url": "/projects"
+    },
+    {
         "location" : "Lists",
         "url": "/lists"
-    },{
+    },
+    {
         "location" : "Tasks",
         "url": "/tasks"
     },{

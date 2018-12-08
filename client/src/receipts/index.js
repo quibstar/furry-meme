@@ -146,9 +146,8 @@ class Receipts extends Component {
           <ReceiptForm id={this.state.id} closeDrawerAndReloadView={this.closeDrawerAndReloadView} />
         </Drawer>
         <Link to="/receipts/new" className="float-right right-link">
-          <Button className="m-button" icon="plus" type="primary">
-            New Receipt
-          </Button>
+          <Icon type="plus" />
+          New Receipt
         </Link>
         <h1>Receipts</h1>
         {this.showReceipts()}
