@@ -24,7 +24,7 @@ class ReceiptFrom extends Component {
   setUpCategories = res => {
     if (res && res.status === 200) {
       const categories = res.data;
-      const cb = categories.filter(c => c.name === 'receipt');
+      const cb = categories.filter(c => c.name === 'receipts');
       this.setState({ categories: cb[0].categories });
     }
   };
