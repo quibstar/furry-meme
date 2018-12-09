@@ -6,6 +6,8 @@ import EditProject from './edit';
 import NewArea from './area/new';
 import EditArea from './area/edit';
 import ShowArea from './area/show';
+import Products from './products';
+
 class ProjectShow extends Component {
   constructor(props) {
     super(props);
@@ -14,6 +16,9 @@ class ProjectShow extends Component {
       showDrawer: false,
       showAreaDrawer: false,
       areaId: null,
+      productDrawerVisibility: false,
+      showProductDrawer: false,
+      productId: null,
     };
   }
 
@@ -102,7 +107,7 @@ class ProjectShow extends Component {
    * Edit callback
    */
   closeDrawerAndReloadProject = () => {
-    this.setState({ showDrawer: false, areaId: null });
+    this.setState({ showDrawer: false, productDrawerVisibility: false, areaId: null, productId: null });
     this.fetchProject();
   };
 
@@ -196,6 +201,16 @@ class ProjectShow extends Component {
           </Button>
           {this.projectHead()}
           <Divider />
+          {this.state.project ? (
+            <Products
+              products={this.state.project.products}
+              project={this.state.project}
+              fetchProject={this.fetchProject}
+              closeAreaDrawerAndReloadProject={this.closeAreaDrawerAndReloadProject}
+            />
+          ) : (
+            ''
+          )}
           {this.editDrawer()}
           {this.areas()}
         </div>

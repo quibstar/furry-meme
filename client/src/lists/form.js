@@ -156,12 +156,7 @@ class ListForm extends Component {
                 ],
                 initialValue: editing ? (items[k] ? items[k].name : undefined) : undefined,
               })(<Input placeholder="List Item" style={{ width: '60%', marginRight: 8 }} />)}
-              <Icon
-                className="dynamic-delete-button"
-                type="minus-circle-o"
-                disabled={keys.length === 1}
-                onClick={() => this.remove(k)}
-              />
+              <Icon type="minus-circle-o" disabled={keys.length === 1} onClick={() => this.remove(k)} />
             </FormItem>
 
             {getFieldDecorator(`ids[${k}]`, {

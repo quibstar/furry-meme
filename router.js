@@ -16,6 +16,7 @@ const Inventory = require('./controllers/inventory');
 const Users = require('./controllers/users');
 const Payments = require('./controllers/payments');
 const Projects = require('./controllers/projects');
+const Products = require('./controllers/products');
 const Receipts = require('./controllers/receipts');
 
 module.exports = function(app) {
@@ -102,6 +103,12 @@ module.exports = function(app) {
   app.post('/api/v1/area-cost', requireAuth, Projects.addCost);
   app.put('/api/v1/area-cost/:id', requireAuth, Projects.updateCost);
   app.delete('/api/v1/cost-delete/:id', requireAuth, Projects.removeCost);
+
+  //Project Product
+  app.get('/api/v1/project-product/:id', requireAuth, Products.product);
+  app.post('/api/v1/project-product', requireAuth, Products.addProduct);
+  app.put('/api/v1/project-product/:id', requireAuth, Products.updateProduct);
+  app.delete('/api/v1/product-delete/:id', requireAuth, Products.removeProduct);
 
   // receipts
   app.get('/api/v1/receipts', requireAuth, Receipts.receipts);

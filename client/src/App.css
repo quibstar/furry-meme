@@ -67,3 +67,7 @@ h1 {
         width: 100%;
     }
 }
+
+body .ant-input-number {
+    width: 100%
+}

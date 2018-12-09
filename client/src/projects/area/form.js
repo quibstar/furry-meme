@@ -116,7 +116,7 @@ class AreaForm extends Component {
       <div key={index}>
         <Row gutter={16}>
           <Col xs={12} sm={6}>
-            <FormItem label="Width" required={true}>
+            <FormItem label={index === 0 ? 'Width' : ''} required={true}>
               {getFieldDecorator(`width[${k}]`, {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [
@@ -130,7 +130,7 @@ class AreaForm extends Component {
             </FormItem>
           </Col>
           <Col xs={12} sm={6}>
-            <FormItem label="Length" required={true}>
+            <FormItem label={index === 0 ? 'Length' : ''} required={true}>
               {getFieldDecorator(`length[${k}]`, {
                 validateTrigger: ['onChange', 'onBlur'],
                 rules: [
@@ -144,7 +144,7 @@ class AreaForm extends Component {
             </FormItem>
           </Col>
           <Col xs={12} sm={6}>
-            <FormItem label="Height" required={false}>
+            <FormItem label={index === 0 ? 'Height' : ''} required={false}>
               {getFieldDecorator(`height[${k}]`, {
                 validateTrigger: ['onChange', 'onBlur'],
                 initialValue: area ? area.heights[index] : null,
@@ -156,7 +156,7 @@ class AreaForm extends Component {
               {keys.length > 1 ? (
                 <Button
                   type="danger"
-                  className="dynamic-delete-button"
+                  className={index === 0 ? 'dynamic-delete-button' : ''}
                   disabled={keys.length === 1}
                   onClick={() => this.remove(k)}
                 >
@@ -184,7 +184,7 @@ class AreaForm extends Component {
             <Col span={12}>
               <FormItem label={'Unit of measure'} required={true}>
                 {getFieldDecorator('unit', {
-                  rules: [{ required: true, message: 'Name cannot be blank' }],
+                  rules: [{ required: true, message: 'Unit(s) cannot be blank' }],
                 })(
                   <Select>
                     {['ea.', 'bx.', 'pc.', 'case', 'pallet', 'lb.', 'ft.', 'yds.', 'pt.', 'qt.', 'l.', 'gal.'].map(

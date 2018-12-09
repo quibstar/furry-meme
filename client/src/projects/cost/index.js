@@ -47,7 +47,7 @@ class Cost extends Component {
       return this.state.costs.map((c, idx) => {
         return (
           <div key={idx}>
-            {c.material} at {c.pricePerUnit} per square {this.props.area.unit} will cost{' '}
+            {c.material} at ${c.pricePerUnit} per square {this.props.area.unit} will cost{' '}
             {toCurrency(c.pricePerUnit * this.state.totalArea)}
             <Icon type="form" style={{ margin: '10px 0 0 10px' }} onClick={() => this.editCost(c._id)} />
             <Popconfirm

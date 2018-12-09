@@ -14,8 +14,7 @@ var token = '';
 const Receipt = require('../models/receipt');
 const Account = require('../models/account');
 
-// TODO: REMOVE .only from below
-describe.only('receipt Test: ', function() {
+describe('receipt Test: ', function() {
   var testReceipt;
   before(done => {
     Account.findOne({ name: 'test' }).then(account => {

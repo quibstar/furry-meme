@@ -8,14 +8,6 @@ const ItemSchema = new Schema({
   updated: { type: Date, default: Date.now },
 });
 
-/**
- * {
- * width: 5,
- * length: 5,
- * total: 25
- * }
- */
-
 const Materials = new Schema({
   material: String,
   location: String,
@@ -34,6 +26,14 @@ const AreaSchema = new Schema({
   updated: { type: Date, default: Date.now },
 });
 
+const ProductsSchema = new Schema({
+  name: String,
+  quantity: Number,
+  unit: String,
+  price: Number,
+  total: Number,
+});
+
 const ProjectSchema = new Schema({
   accountId: {
     type: Schema.Types.ObjectId,
@@ -46,6 +46,7 @@ const ProjectSchema = new Schema({
   description: String,
   items: [ItemSchema],
   areas: [AreaSchema],
+  products: [ProductsSchema],
   create: Date,
   updated: { type: Date, default: Date.now },
 });

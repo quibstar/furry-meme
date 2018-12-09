@@ -29,7 +29,6 @@ class CostForm extends Component {
       this.props.form.resetFields();
     }
     if (this.props.costId !== prevProps.costId && this.props.costId !== null) {
-      console.log('test');
       this.getCost();
     }
   };
@@ -84,7 +83,7 @@ class CostForm extends Component {
   };
 
   render() {
-    const { getFieldDecorator, getFieldValue } = this.props.form;
+    const { getFieldDecorator } = this.props.form;
     return (
       <div>
         <Form onSubmit={this.handleSubmit.bind(this)}>
