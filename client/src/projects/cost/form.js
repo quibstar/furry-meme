@@ -77,7 +77,8 @@ class CostForm extends Component {
     if (res && res.status) {
       if (res.status === 404) {
       } else if (res.status === 201 || res.status === 200) {
-        this.props.callback(this.props.form);
+        this.props.form.resetFields();
+        this.props.callback();
       }
     }
   };

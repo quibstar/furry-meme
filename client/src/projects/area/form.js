@@ -52,9 +52,11 @@ class AreaForm extends Component {
         area.heights = values.height;
         area.unit = values.unit;
         // filter
-        area.widths = area.widths.filter(x => x != null);
-        area.lengths = area.lengths.filter(x => x != null);
-        area.heights = area.heights.filter(x => x != null);
+        if (area.widths) {
+          area.widths = area.widths.filter(x => x != null);
+          area.lengths = area.lengths.filter(x => x != null);
+          area.heights = area.heights.filter(x => x != null);
+        }
         area.projectId = this.state.project._id;
         if (this.state.areaId) {
           area._id = this.state.areaId;
@@ -73,6 +75,7 @@ class AreaForm extends Component {
     if (res && res.status) {
       if (res.status === 404) {
       } else if (res.status === 201 || res.status === 200) {
+        this.props.form.resetFields();
         this.props.callback();
       }
     }
