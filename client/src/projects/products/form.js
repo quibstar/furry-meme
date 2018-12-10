@@ -17,8 +17,8 @@ class ProductForm extends Component {
 
   componentDidUpdate = prevProps => {
     // this.props.form.resetFields();
-    console.log(this.props.product !== null, !this.state.isEditing);
-    if (this.props.product !== null && !this.state.isEditing) {
+    // console.log(this.props.product !== null, !this.state.isEditing);
+    if (this.props.product !== null && this.props.product !== undefined && !this.state.isEditing) {
       this.setState({ isEditing: true });
       this.props.form.setFieldsValue({
         name: this.props.product.name,
@@ -47,7 +47,6 @@ class ProductForm extends Component {
         product.projectId = this.state.project._id;
         if (this.state.isEditing) {
           product._id = this.props.product._id;
-          console.log(product);
           Network.put('/project-product', product, this.networkResponse);
         } else {
           Network.post('/project-product', product, this.networkResponse);
