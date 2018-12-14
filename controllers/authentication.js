@@ -31,11 +31,12 @@ exports.signup = function(req, res, next) {
       name: account,
       categories: [
         { name: 'payments', categories: ['Mortgage', 'Utilities'] },
-        { name: 'budgets', categories: [] },
-        { name: 'debts', categories: [] },
+        { name: 'budgets', categories: ['Food', 'Gas'] },
+        { name: 'debts', categories: ['Credit Card'] },
         { name: 'lists', categories: ['Shopping'] },
-        { name: 'tasks', categories: [] },
+        { name: 'tasks', categories: ['Monthly', 'Weekly', 'Daily'] },
         { name: 'inventory', categories: ['Garage', 'Pantry'] },
+        { name: 'receipts', categories: ['Food', 'Gas'] },
       ],
     });
 

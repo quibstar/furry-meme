@@ -50,15 +50,16 @@ class CategoryList extends Component {
   };
 
   responseFromUpdatingCategories = res => {
-    if (res.status === 200) {
-      this.notify('success');
+    if (res && res.status === 200) {
+      let cat = res.data.success;
+      this.notify('success', cat.name);
     } else {
       this.notify('error');
     }
   };
 
-  notify(type) {
-    var text = type === 'success' ? 'Updated categories.' : 'Categories were not updated';
+  notify(type, cat) {
+    var text = type === 'success' ? `Updated ${cat} category.` : 'Categories were not updated';
     var title = type === 'success' ? 'Success' : 'Error';
     notification[type]({
       message: title,
@@ -131,7 +132,7 @@ class CategoryList extends Component {
                         style={getItemStyle(snapshot.isDragging, provided.draggableProps.style)}
                         className="item"
                       >
-                        {item}
+                        <Icon type="drag" /> {item}
                         <div style={{ float: 'right' }}>
                           <Popconfirm
                             title="Are you sure delete this category?"

@@ -26,16 +26,21 @@ exports.update = function(req, res, next) {
   const id = req.user.accountId;
   const catId = req.body._id;
   const categories = req.body.categories;
-  console.log(res.body);
   Account.findOneAndUpdate(
     { _id: id, 'categories._id': catId },
     { 'categories.$.categories': categories },
     { new: true },
-    function(err, c) {
+    function(err, account) {
       if (err) {
         return res.status(422).send({ error: 'Something went wrong. Please try again' });
       }
-      res.json({ success: { category: c } });
+      var cat = null;
+      for (var j = 0; j < account.categories.length; j++) {
+        if (account.categories[j]._id == catId) {
+          cat = account.categories[j];
+        }
+      }
+      res.json({ success: cat });
     }
   );
 };

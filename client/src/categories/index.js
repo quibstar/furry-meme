@@ -49,7 +49,7 @@ class Categories extends Component {
     return (
       <div>
         <h1>Categories</h1>
-        {this.categoryColumns()}
+        <div id="cat-wrap">{this.categoryColumns()}</div>
       </div>
     );
   }
