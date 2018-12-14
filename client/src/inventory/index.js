@@ -82,7 +82,7 @@ class Inventory extends Component {
           <Form id={this.state.id} fetchInventory={this.fetchInventory} />
         </Drawer>
         <h1>Inventory</h1>
-        <Media query="(min-width: 599px)">
+        <Media query="(min-width: 767px)">
           {matches =>
             matches
               ? this.state.inventory && <InventoryTable inventory={this.state.inventory} />

@@ -143,7 +143,7 @@ class Products extends Component {
 
   render() {
     return (
-      <div style={{ marginBottom: '20px' }}>
+      <div className="proj-card">
         {this.renderProductDrawer()}
         <Card
           title="Products"

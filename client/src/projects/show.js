@@ -7,6 +7,7 @@ import NewArea from './area/new';
 import EditArea from './area/edit';
 import ShowArea from './area/show';
 import Products from './products';
+import './project.css';
 
 class ProjectShow extends Component {
   constructor(props) {
@@ -201,18 +202,20 @@ class ProjectShow extends Component {
           </Button>
           {this.projectHead()}
           <Divider />
-          {this.state.project ? (
-            <Products
-              products={this.state.project.products}
-              project={this.state.project}
-              fetchProject={this.fetchProject}
-              closeAreaDrawerAndReloadProject={this.closeAreaDrawerAndReloadProject}
-            />
-          ) : (
-            ''
-          )}
+          <div className="proj-wrap">
+            {this.areas()}
+            {this.state.project ? (
+              <Products
+                products={this.state.project.products}
+                project={this.state.project}
+                fetchProject={this.fetchProject}
+                closeAreaDrawerAndReloadProject={this.closeAreaDrawerAndReloadProject}
+              />
+            ) : (
+              ''
+            )}
+          </div>
           {this.editDrawer()}
-          {this.areas()}
         </div>
       </div>
     );

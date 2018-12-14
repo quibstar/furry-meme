@@ -41,7 +41,7 @@ class Show extends Component {
       return (
         <div className="proj-card">
           <Card
-            title={a.label}
+            title={`Area: ${a.label}`}
             extra={
               <ButtonGroup className="float-right">
                 <Button size="small" onClick={() => this.editArea(a._id)}>
