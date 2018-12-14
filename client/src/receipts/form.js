@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Form, Input, Select, Button, Row, Col, DatePicker, InputNumber } from 'antd';
+import { Form, Input, Select, Button, Row, Col, DatePicker, InputNumber, Divider } from 'antd';
 import Network from '../services/network';
 import moment from 'moment';
 const FormItem = Form.Item;
@@ -32,7 +32,7 @@ class ReceiptFrom extends Component {
   componentDidUpdate(prevProps) {
     if (this.props.id !== prevProps.id) {
       if (this.props.id === 'new' || this.props.id === null) {
-        this.setState({ editing: false, receipt: {} });
+        this.setState({ editing: false, receipt: {}, id: null });
         this.props.form.resetFields();
       } else {
         this.checkForId();
@@ -110,6 +110,8 @@ class ReceiptFrom extends Component {
     const { getFieldDecorator } = this.props.form;
     return (
       <div>
+        <h1>{this.state.id !== null ? 'Edit Receipt' : 'New Receipt'}</h1>
+        <Divider />
         <Form onSubmit={this.handleSubmit.bind(this)}>
           <Row gutter={16}>
             <Col sm={24}>

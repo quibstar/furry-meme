@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import { Table, Icon, Skeleton } from 'antd';
+import { Table, Button, Skeleton } from 'antd';
 import { Link } from 'react-router-dom';
 import Network from '../services/network';
+import Form from './form';
+import Drawer from '../drawer';
 
 class Projects extends Component {
   constructor(props) {
@@ -9,12 +11,25 @@ class Projects extends Component {
     this.state = {
       projects: [],
       isLoading: false,
+      showDrawer: false,
     };
   }
 
   componentDidMount() {
     this.fetchProjects();
     this.isLoading();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props !== prevProps) {
+      const path = this.props.match.path;
+      if (path === '/projects/new') {
+        this.setState({ showDrawer: true, id: 'new' });
+      } else {
+        // hide drawer
+        this.setState({ showDrawer: false, id: null });
+      }
+    }
   }
 
   fetchProjects = () => {
@@ -86,12 +101,30 @@ class Projects extends Component {
     ];
   }
 
+  // callbacks
+  goToIndex = () => {
+    this.props.history.push('/projects');
+  };
+
+  goToIndexAndReloadData = () => {
+    this.fetchProjects();
+    this.goToIndex();
+  };
+
   render() {
     return (
       <div id="projects">
-        <Link to="/projects/new" className="float-right right-link">
-          <Icon type="plus" /> New Project
+        <Link to={`/projects/new`}>
+          <Button className="m-button" icon="plus" type="primary">
+            New Project
+          </Button>
         </Link>
+        <Drawer showDrawer={this.state.showDrawer} callback={this.goToIndex}>
+          <Form id={this.state.id} callback={this.goToIndexAndReloadData} />
+        </Drawer>
+        {/* <Link to="/projects/new" className="float-right right-link">
+          <Icon type="plus" /> New Project
+        </Link> */}
         <h1>Projects</h1>
         {this.showProjects()}
       </div>

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, Drawer, Table, Popconfirm, Icon } from 'antd';
+import { Table, Popconfirm, Icon, Button } from 'antd';
+import Drawer from '../drawer';
 import ReceiptForm from './form';
 import Network from '../services/network';
 import moment from 'moment';
@@ -28,6 +29,7 @@ class Receipts extends Component {
       this.setState({ receipts });
     }
   };
+
   componentDidUpdate(prevProps) {
     if (this.props !== prevProps) {
       const id = this.props.match.params.id;
@@ -51,6 +53,7 @@ class Receipts extends Component {
   animateDrawer = () => {
     let state = this.state.showDrawer;
     this.setState({ showDrawer: !state });
+    // this.props.history.push('/receipts');
   };
 
   goToIndex = () => {
@@ -135,20 +138,14 @@ class Receipts extends Component {
   render() {
     return (
       <div>
-        <Drawer
-          title="New Receipt"
-          placement="right"
-          width="50%"
-          closable={true}
-          onClose={this.goToIndex}
-          visible={this.state.showDrawer}
-        >
+        <Link to="/receipts/new">
+          <Button className="m-button" icon="plus" type="primary">
+            New Receipt
+          </Button>
+        </Link>
+        <Drawer showDrawer={this.state.showDrawer} callback={this.goToIndex}>
           <ReceiptForm id={this.state.id} closeDrawerAndReloadView={this.closeDrawerAndReloadView} />
         </Drawer>
-        <Link to="/receipts/new" className="float-right right-link">
-          <Icon type="plus" />
-          New Receipt
-        </Link>
         <h1>Receipts</h1>
         {this.showReceipts()}
       </div>

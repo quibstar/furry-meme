@@ -25,7 +25,7 @@ import SignIn from '../src/auth/signin';
 import Register from '../src/auth/register';
 import UserHeader from './header/';
 import Projects from './projects';
-import ProjectNew from './projects/new';
+// import ProjectNew from './projects/new';
 import ProjectEdit from './projects/edit';
 import ProjectShow from './projects/show';
 import Receipts from './receipts';
@@ -147,7 +147,7 @@ class App extends Component {
 
               <Route exact path="/goals" component={Goals} />
 
-              <Route exact path="/projects/new" component={ProjectNew} />
+              <Route exact path="/projects/new" component={Projects} />
               <Route exact path="/projects/edit/:id" component={ProjectEdit} />
               <Route exact path="/projects/:id" component={ProjectShow} />
               <Route exact path="/projects" component={Projects} />
