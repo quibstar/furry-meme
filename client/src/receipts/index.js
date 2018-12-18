@@ -5,6 +5,7 @@ import Drawer from '../drawer';
 import ReceiptForm from './form';
 import Network from '../services/network';
 import moment from 'moment';
+import { toCurrency } from '../utilities/to-currency';
 
 class Receipts extends Component {
   constructor(props) {
@@ -113,7 +114,7 @@ class Receipts extends Component {
         title: 'Amount',
         dataIndex: 'amount',
         render: text => {
-          return text && `$${text}`;
+          return text && toCurrency(text);
         },
       },
       {
